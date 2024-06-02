@@ -36,7 +36,7 @@ export default function ViewPage() {
                     href={"/"}
                     className="mr-1 px-5 py-3 w-50 rounded-full text-grey active:bg-sky-300 active:text-grey text-center"
                 >
-                    Pupuk
+                    Pakan
                 </a>
                 <a
                     href={"/"}

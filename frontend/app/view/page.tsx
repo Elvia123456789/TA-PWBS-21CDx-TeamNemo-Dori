@@ -9,7 +9,7 @@ export default function ViewPage() {
             {/* area menu */}
             <nav>
                 <Link
-                    href={"/"}
+                    href={"/login"}
                     className="mr-1 bg-sky-300 px-5 py-3 w-30 rounded-full text-white active:bg-black active:text-sky-300 text-left"
                 >
                     Log in
@@ -21,25 +21,25 @@ export default function ViewPage() {
                     Sign in
                 </a>
                 <a
-                    href={"/"}
+                    href={"/kolam"}
                     className="mr-1 px-5 py-3 w-50 rounded-full text-grey active:bg-sky-300 active:text-grey text-center"
                 >
                     Kolam
                 </a>
                 <a
-                    href={"/"}
+                    href={"/bibit"}
                     className="mr-1 px-5 py-3 w-50 rounded-full text-grey active:bg-sky-300 active:text-grey text-center"
                 >
                     Bibit
                 </a>
                 <a
-                    href={"/"}
+                    href={"/pakan"}
                     className="mr-1 px-5 py-3 w-50 rounded-full text-grey active:bg-sky-300 active:text-grey text-center"
                 >
                     Pakan
                 </a>
                 <a
-                    href={"/"}
+                    href={"/pemesanan"}
                     className="mr-1 px-5 py-3 w-50 rounded-full text-grey active:bg-sky-300 active:text-grey text-center"
                 >
                     Pemesanan

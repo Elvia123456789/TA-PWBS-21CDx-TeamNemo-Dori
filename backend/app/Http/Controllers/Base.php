@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class Base extends Controller
 {
-    //
+    
     public function sendResponse($result, $message)
     {
         

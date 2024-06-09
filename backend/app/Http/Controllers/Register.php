@@ -24,5 +24,20 @@ class Register extends Controller
         $user = User::create($input);
         $success['token'] = $user->createToken('MyApp')->plainTextToken;
         $success['name'] = $user->name;
+
+        return $this->sendResponse($success, 'User register successfully!');
+    }
+
+    public function login(Request $request): JsonResponse
+    {
+        if(Auth::attempt(['email' ->email. 'password' => $request->password])){
+            $user = Auth::user();
+            $success['token'] = $user->createToken('MyApp')->plainTextToken;
+            $success['name'] = $user->name;
+
+            return $this->sendResponse($success. 'User login Successfully!');
+        } else{
+            
+        }
     }
 }

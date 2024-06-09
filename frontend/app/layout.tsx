@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
-
+// panggil file "style.module.css"
+import style from "./styles/style.module.css";
+// panggil file tailwind
+import "tailwindcss/tailwind.css";
 // panggil file tailwind
 import "tailwindcss/tailwind.css";
 
@@ -24,7 +27,15 @@ export default function MainLayout({
           type="image/x-icon"
         />
       </head>
-      <body className="m-5">{children}</body>
+      <body className={style.layout}>
+
+        {/* <div class="abc def hij"></div> */}
+        <section className={`${style.content} ${style.content_bg}`}>
+          {children}
+        </section>
+
+        <footer className={style.footer}>&copy; 2024 | PWBS - NEMO & DORI</footer>
+      </body>
     </html>
   );
 }

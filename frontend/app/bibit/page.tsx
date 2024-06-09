@@ -42,6 +42,27 @@ export default function BibitPage() {
             </nav>
 
             {/* area home */}
+            <div className="container mx-auto p-8">
+                <h1 className="text-4xl font-bold mb-4">Data Bibit</h1>
+                <div className="bg-white rounded-lg shadow p-6">
+                    <table className="min-w-full bg-white">
+                        <thead>
+                            <tr>
+                                <th className="py-2 px-4 border-b-2 border-gray-200">Nama Bibit</th>
+                                <th className="py-2 px-4 border-b-2 border-gray-200">Jumlah</th>
+                                <th className="py-2 px-4 border-b-2 border-gray-200">Ukuran</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td className="py-2 px-4 border-b border-gray-200"></td>
+                                <td className="py-2 px-4 border-b border-gray-200"></td>
+                                <td className="py-2 px-4 border-b border-gray-200"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     )
 }

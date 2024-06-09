@@ -37,7 +37,7 @@ class Register extends Controller
 
             return $this->sendResponse($success. 'User login Successfully!');
         } else{
-            
+            return $this->sendError('Unauthorised!', ['error' => 'Unauthorised']);
         }
     }
 }

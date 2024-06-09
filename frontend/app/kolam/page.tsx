@@ -4,6 +4,7 @@ import React from 'react'
 import Link from 'next/link';
 
 export default function KolamPage() {
+   
     return (
         <div>
             {/* area menu */}
@@ -41,7 +42,28 @@ export default function KolamPage() {
 
             </nav>
 
-            {/* area home */}
+            {/* area data kolam */}
+            <div className="container mx-auto p-8">
+                <h1 className="text-4xl font-bold mb-4">Data Kolam</h1>
+                <div className="bg-white rounded-lg shadow p-6">
+                    <table className="min-w-full bg-white">
+                        <thead>
+                            <tr>
+                                <th className="py-2 px-4 border-b-2 border-gray-200">Nama Kolam</th>
+                                <th className="py-2 px-4 border-b-2 border-gray-200">Ukuran</th>
+                                <th className="py-2 px-4 border-b-2 border-gray-200">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td className="py-2 px-4 border-b border-gray-200"></td>
+                                <td className="py-2 px-4 border-b border-gray-200"></td>
+                                <td className="py-2 px-4 border-b border-gray-200"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     )
 }

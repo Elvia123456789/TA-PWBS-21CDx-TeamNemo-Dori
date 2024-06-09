@@ -18,5 +18,11 @@ class Register extends Controller
         if($validator->fails()) {
             return $this->sendError('Validator Error!', $validator->errors());
         }
+
+        $input = $request->all();
+        $input['password'] = bcrypt($input['password']);
+        $user = User::create($input);
+        $success['token'] = $user->createToken('MyApp')->plainTextToken;
+        $success['name'] = $user->name;
     }
 }

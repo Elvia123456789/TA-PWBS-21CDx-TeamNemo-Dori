@@ -15,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::controller(Register::class)->group(function(){
+    // route untuk register
     Route::post('register', 'register');
+    
+    // route untuk login
     Route::post('login', 'login');
 });

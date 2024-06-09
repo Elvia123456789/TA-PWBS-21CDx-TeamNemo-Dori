@@ -9,6 +9,7 @@ class Base extends Controller
     //
     public function sendResponse($result, $message)
     {
+        //
         $response = [
             'success' => true,
             'data' => $result,

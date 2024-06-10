@@ -54,10 +54,24 @@ export default function ViewPage() {
 
 
             {/* area home */}
-            <div className="bg-gradient-to-r from-gray-300 to-sky-300 rounded-lg shadow-lg py-24 mt-16">
-                <h1 className="text-4xl font-bold mb-4 text-white ml-14 mr-44">Sistem Informasi Budidaya Ikan Lele</h1>
-                <p className="text-lg text-white ml-14 mr-96">Budidaya ikan lele adalah salah satu bentuk budidaya perikanan yang populer di Indonesia dan banyak negara lainnya. Ikan lele (Clarias spp.) dikenal sebagai ikan yang mudah dipelihara dan memiliki nilai ekonomi yang tinggi.</p>
+            <div className="bg-gradient-to-r from-gray-300 to-sky-300 rounded-lg shadow py-20 mt-16 flex items-center">
+                <div className="w-2/3">
+                    <h1 className="text-white text-4xl font-bold mb-4 ml-14">Sistem Informasi Budidaya Ikan Lele</h1>
+                    <p className="text-white text-lg mb-4 ml-14">
+                        Budidaya ikan lele adalah salah satu bentuk budidaya perikanan yang populer di Indonesia dan banyak negara lainnya. Ikan lele dikenal sebagai ikan yang mudah dipelihara dan memiliki nilai ekonomi yang tinggi.
+                    </p>
+                </div>
+                <div className="w-1/3 flex justify-center">
+                    <img
+                        src="../images/logo.png"
+                        alt="Logo"
+                        width={600}
+                        height={600}
+                        className="w-4/6 flex justify-right"
+                    />
+                </div>
             </div>
         </div>
     )
 }
+

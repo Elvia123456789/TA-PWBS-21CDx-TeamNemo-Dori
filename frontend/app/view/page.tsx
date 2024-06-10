@@ -16,12 +16,6 @@ export default function ViewPage() {
                 </Link>
                 <a
                     href={"/"}
-                    className="mr-1 border-2 border-sky-300 bg-sky-50 px-5 py-3 w-30 rounded-full text-grey active:bg-black active:text-sky-300"
-                >
-                    Sign in
-                </a>
-                <a
-                    href={"/"}
                     className="flex justify-center mr-1 px-5 py-3 w-50 rounded-full text-white active:bg-sky-300 active:text-grey w-2/12"
                 >
                     Home
@@ -30,25 +24,25 @@ export default function ViewPage() {
                     href={"/kolam"}
                     className="flex justify-center mr-1 px-5 py-3 w-50 rounded-full text-white active:bg-sky-300 active:text-grey w-2/12"
                 >
-                    Kolam
+                    Data Kolam
                 </a>
                 <a
                     href={"/bibit"}
                     className="flex justify-center mr-1 px-5 py-3 w-50 rounded-full text-white active:bg-sky-300 active:text-grey w-2/12"
                 >
-                    Bibit
+                    Data Bibit
                 </a>
                 <a
                     href={"/pakan"}
                     className="flex justify-center mr-1 px-5 py-3 w-50 rounded-full text-white active:bg-sky-300 active:text-grey w-2/12"
                 >
-                    Pakan
+                    Data Pakan
                 </a>
                 <a
                     href={"/pemesanan"}
                     className="flex justify-center mr-1 px-5 py-3 w-50 rounded-full text-white active:bg-sky-300 active:text-grey w-2/12"
                 >
-                    Pemesanan
+                    Data Pemesanan
                 </a>
             </nav>
 

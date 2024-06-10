@@ -1,5 +1,7 @@
 import React from 'react'
 
+import Link from 'next/link';
+
 export default function PageLogin() {
     return (
         <div className="flex items-center justify-center min-h-screen bg-gray-100">
@@ -9,18 +11,19 @@ export default function PageLogin() {
                 <div className="mb-4">
                     <label htmlFor="email" className="block text-gray-700 mb-2">Email</label>
                     <input
-                        type=""
-                        id=""
+                        type="email"
+                        id="email"
                         className="w-full p-2 border border-gray-300 rounded-lg"
+
                     />
                 </div>
-
                 <div className="mb-6">
                     <label htmlFor="password" className="block text-gray-700 mb-2">Password</label>
                     <input
                         type="password"
                         id="password"
                         className="w-full p-2 border border-gray-300 rounded-lg"
+
                     />
                 </div>
                 <button
@@ -29,7 +32,16 @@ export default function PageLogin() {
                 >
                     Login
                 </button>
+
+                <div className="mt-4 text-center">
+                    <p>Belum punya akun? <Link
+                    href={"/register"}
+                    className="text-blue-500"
+                >
+                    Daftar
+                </Link></p>
+                </div>
             </div>
         </div>
-    )
+    );
 }

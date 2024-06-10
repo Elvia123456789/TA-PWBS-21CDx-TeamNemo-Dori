@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class MLogin extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'detail', 
+        'price'];
 }

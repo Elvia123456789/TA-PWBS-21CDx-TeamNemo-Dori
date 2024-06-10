@@ -34,10 +34,10 @@ export default function KolamPage() {
                     Data Pakan
                 </a>
                 <a
-                    href={"/pemesanan"}
+                    href={"/panen"}
                     className="flex justify-center mr-1 px-5 py-3 w-50 rounded-full text-white active:bg-sky-300 active:text-grey w-2/12"
                 >
-                    Data Pemesanan
+                    Data Panen
                 </a>
 
             </nav>

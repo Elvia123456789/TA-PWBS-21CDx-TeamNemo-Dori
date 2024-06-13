@@ -1,6 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\MLogin;
+use App\Models\MRegister;
+
 
 use Illuminate\Http\Request;
 

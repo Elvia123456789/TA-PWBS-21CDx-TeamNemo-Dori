@@ -10,7 +10,7 @@ class MRegister extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name',
+        'nama',
         'email',
         'password',
     ];

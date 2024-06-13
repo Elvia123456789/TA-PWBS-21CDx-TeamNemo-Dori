@@ -12,9 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('login', function (Blueprint $table) {
-            $table->id();
-            $table->string('email')->unique();
-            $table->string('password');
+            
+             // buat field id
+             $table->integer('id')->autoIncrement();
+             
+            // buat field email
+             $table->string("email", 15);
+
+            // buat field password
+            $table->string('password', 50);
             $table->timestamps();
         });
     }

@@ -12,7 +12,17 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('register', function (Blueprint $table) {
-            $table->id();
+            // $table->id();
+            
+             // buat field id
+             $table->integer('id')->autoIncrement();
+             // buat field nama
+             $table->string("nama", 100);
+             // buat field email
+             $table->string("email", 15);
+            // buat field password
+            $table->string('password', 50);
+
             $table->timestamps();
         });
     }

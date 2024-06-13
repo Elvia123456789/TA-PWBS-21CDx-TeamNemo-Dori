@@ -14,9 +14,9 @@ return new class extends Migration
         // Buat fungsi untuk simpan data
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('nama');
             $table->string('detail');
-            $table->string('prince');
+            $table->string('harga');
             $table->timestamps();
         });
     }

@@ -15,7 +15,7 @@ return new class extends Migration
             // $table->id();
             
              // buat field id
-             $table->integer('id')->autoIncrement();
+             $table->id();
              // buat field nama
              $table->string("nama", 100);
              // buat field email

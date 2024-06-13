@@ -24,3 +24,5 @@ use Illuminate\Support\Facades\Route;
 
 // Route untuk Login
 Route::post('login', [LoginController::class, 'login']);
+
+Route::post('login', [LoginController::class, 'login']);

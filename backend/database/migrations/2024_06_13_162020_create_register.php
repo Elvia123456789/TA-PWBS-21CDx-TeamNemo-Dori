@@ -13,15 +13,18 @@ return new class extends Migration
     {
         Schema::create('register', function (Blueprint $table) {
             // $table->id();
-            
-             // buat field id
-             $table->id();
-             // buat field nama
-             $table->string("nama", 100);
-             // buat field email
-             $table->string("email", 15);
-            // buat field password
-            $table->string('password', 50);
+
+            // buat field id
+            $table->id();
+
+            // buat field nama
+            $table->string("nama", 100);
+            // buat field email
+
+            $table->string("email", 15);
+           // buat field password
+           
+           $table->string('password', 50);
 
             $table->timestamps();
         });

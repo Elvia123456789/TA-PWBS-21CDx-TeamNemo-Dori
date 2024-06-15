@@ -40,4 +40,15 @@ class MKolam extends Model
         return $query->get();
     }
 
+    // buat fungsi untuk simpan data
+    function saveData($npm, $nama, $telepon, $jurusan)
+    {
+        $this->insert([
+            "nama" => $npm,
+            "jenis" => $nama,
+            "ukuran" => $telepon,
+        ]);
+    }
+
+
 }

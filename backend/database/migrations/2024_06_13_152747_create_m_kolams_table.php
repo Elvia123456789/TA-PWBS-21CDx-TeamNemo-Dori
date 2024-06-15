@@ -17,11 +17,11 @@ return new class extends Migration
             // buat field id
             $table->integer('id')->autoIncrement();
             // // buat field nama kolam
-            $table->char('nama_kolam', 100);
+            $table->char('nama', 100);
             // // buat field ukuran kolam
-            $table->string("ukuran_kolam", 20);
+            $table->string("ukuran", 20);
             // // buat field jenis kolam
-            $table->string("jenis_kolam", 15);
+            $table->string("jenis", 15);
         
 
             

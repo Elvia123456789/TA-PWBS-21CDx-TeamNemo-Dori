@@ -84,6 +84,17 @@ class MKolam extends Model
 
     }
 
+     // buat fungsi untuk edit data
+     function editData($nama, $jenis, $ukuran, $jenis_lama)
+     {
+         $this->whereRaw("TO_BASE64(jenis) = '$jenis_lama'")->update([
+             "nama" => $nama,
+             "jenis" => $nama,
+             "ukuran" => $ukuran,
+         ]);
+         }
+ 
+
 
 
 

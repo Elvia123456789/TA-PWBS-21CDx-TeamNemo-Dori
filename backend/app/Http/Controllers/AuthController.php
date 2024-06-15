@@ -4,27 +4,25 @@ namespace App\Http\Controllers;
 use App\Models\MLogin;
 use App\Models\MRegister;
 
-
 use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
-    // Registrasi pengguna baru
-    public function register(Request $request)
-    {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:8',
-        ]);
-
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
-
-        return response()->json([
+     // Registrasi pengguna baru
+     public function register(Request $request)
+     {
+         $request->validate([
+             'name' => 'required|string|max:255',
+             'email' => 'required|string|email|max:255|unique:users',
+             'password' => 'required|string|min:8',
+         ]);
+ 
+         $user = User::create([
+             'name' => $request->name,
+             'email' => $request->email,
+             'password' => Hash::make($request->password),
+         ]);
+         return response()->json([
             'success' => true,
             'data' => $user,
             'message' => 'User registered successfully'
@@ -55,6 +53,17 @@ class AuthController extends Controller
                 'token' => $token,
             ],
             'message' => 'User logged in successfully'
+        ]);
+        }
+
+        // Logout pengguna
+    public function logout(Request $request)
+    {
+        $request->user()->token()->revoke();
+
+        return response()->json([
+            'success' => true,
+            'message' => 'User logged out successfully'
         ]);
     }
 }

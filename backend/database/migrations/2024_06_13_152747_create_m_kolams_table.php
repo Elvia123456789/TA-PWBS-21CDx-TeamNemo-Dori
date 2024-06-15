@@ -19,9 +19,9 @@ return new class extends Migration
             // // buat field nama kolam
             $table->char('nama', 100);
             // // buat field ukuran kolam
-            $table->string("ukuran", 20);
+            $table->string("jenis", 20);
             // // buat field jenis kolam
-            $table->string("jenis", 15);
+            $table->string("ukuran", 15);
         
 
             

@@ -13,7 +13,7 @@ class MKolam extends Model
      // buat fungsi untuk menampilkan data mahasiswa
      function viewData()
      {
-         $query = $this->select("id AS id_kolam", "nama AS nama_kolam", "ukuran AS ukuran_kolam", "jenis AS jenis_kolam")->from($this->table)->orderBy("id");
+         $query = $this->select("id AS id_kolam", "nama AS nama_kolam", "jenis AS jenis_kolam", "ukuran AS ukuran_kolam")->from($this->table)->orderBy("id");
  
          return $query->get();
         }
@@ -21,15 +21,23 @@ class MKolam extends Model
          // buat fungsi untuk pencarian data mahasiswa
     function searchData($keyword)
     {
-        $query = $this->select("id AS id_kolam", "nama AS nama_kolam", "ukuran AS ukuran_kolam", "jenis AS jenis_kolam")->from($this->table)
+        $query = $this->select("id AS id_kolam", "nama AS nama_kolam", "jenis AS jenis_kolam", "ukuran AS ukuran_kolam")->from($this->table)
         // pencarian nama, ukuran dan jenis harus sesuai dengan data
-        ->orWhere('ukuran', $keyword)
         ->orWhere('jenis', $keyword)
+        ->orWhere('ukuran', $keyword)
         // pencarian nama sesuai dengan karakter yang ada pada data
         ->orWhereRaw('nama LIKE ?',["%$keyword%"])
         ->orderBy("id");
 
         return $query->get();
     }  
+
+    // buat fungsi untuk cek simpan data
+    function checkSaveData($ukuran)
+    {
+        $query = $this->select("jenis")->from($this->table)->where("npm", "=", $npm);
+
+        return $query->get();
+    }
 
 }

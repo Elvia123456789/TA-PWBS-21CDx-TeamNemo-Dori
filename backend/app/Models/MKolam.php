@@ -75,7 +75,17 @@ class MKolam extends Model
     //     return $query->get();
     // }
 
-    
+    // buat fungsi untuk cek edit data
+    function checkEditData($jenis_lama, $jenis)
+    {
+        $query = $this->select("id")->where("jenis","=",$jenis)->whereRaw("TO_BASE64(jenis) != '$jenis_lama'")->get();
+
+        return $query;
+
+    }
+
+
+
 
 
 }

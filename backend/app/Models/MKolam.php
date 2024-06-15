@@ -60,5 +60,22 @@ class MKolam extends Model
         return $query->get();
     }
 
+     // buat fungsi untuk hapus data
+     function deleteData($nama)
+     {
+         // $this->where("npm","=",$npm)->delete();
+        //  $this->whereRaw("TO_BASE64(npm) = '$npm'")->delete();
+     }
+
+    //  // buat fungsi untuk detail data
+    // function detailData($jenis)
+    // {
+    //     $query = $this->select("id AS id_kolam", "nama AS nama_kolam", "jenis AS jenis_kolam", "ukuran AS ukuran_kolam")->from($this->table)->whereRaw("TO_BASE64(npm) = '$npm'");
+
+    //     return $query->get();
+    // }
+
+    
+
 
 }

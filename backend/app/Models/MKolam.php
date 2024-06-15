@@ -41,12 +41,12 @@ class MKolam extends Model
     }
 
     // buat fungsi untuk simpan data
-    function saveData($npm, $nama, $telepon, $jurusan)
+    function saveData($nama, $jenis, $ukuran)
     {
         $this->insert([
-            "nama" => $npm,
-            "jenis" => $nama,
-            "ukuran" => $telepon,
+            "nama" => $nama,
+            "jenis" => $jenis,
+            "ukuran" => $ukuran,
         ]);
     }
 

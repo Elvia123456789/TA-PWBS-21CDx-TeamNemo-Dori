@@ -33,7 +33,7 @@ class MKolam extends Model
     }  
 
     // buat fungsi untuk cek simpan data
-    function checkSaveData($ukuran)
+    function checkSaveData($jenis)
     {
         $query = $this->select("jenis")->from($this->table)->where("npm", "=", $npm);
 
@@ -48,6 +48,16 @@ class MKolam extends Model
             "jenis" => $jenis,
             "ukuran" => $ukuran,
         ]);
+    }
+
+    // buat fungsi untuk check data (berdasarkan jenis)
+    function checkData($nama)
+    {
+        // $query = $this->select("id")->where("npm", "=", $npm);
+        // $query = $this->select("id")
+        // ->whereRaw("TO_BASE64(npm) = '$npm'");
+
+        return $query->get();
     }
 
 

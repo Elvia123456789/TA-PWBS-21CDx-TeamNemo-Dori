@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('m_kolams', function (Blueprint $table) {
+        Schema::create('tb_datakolam', function (Blueprint $table) {
             // $table->id();
 
             // buat field id

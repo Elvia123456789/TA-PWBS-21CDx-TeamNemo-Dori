@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('logout', function (Blueprint $table) {
+        Schema::create('tb_logout', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });

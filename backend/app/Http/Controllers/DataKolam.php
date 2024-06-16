@@ -93,6 +93,16 @@ class DataKolam extends Controller
          return response(["error" => $error, "message" => $message], http_response_code());
      }
 
+       // buat fungsi untuk detail data
+    function detailData($jenis)
+    {
+        // isi nilai variabel "result" dari fungsi "detailData" dari model "MataKolam" sesuai dengan isi parameter "id"
+        $data = $this->model->detailData($jenis);
+
+        // kembalikan nilai variabel "result" ke dalam object "kolam"
+        return response(["kolam" => $data], http_response_code());
+    }
+
 
 
 

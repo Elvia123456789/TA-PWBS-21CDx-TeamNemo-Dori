@@ -36,9 +36,13 @@ Route::post('logout', [AuthController::class, 'logout']);
 // Route untuk Data Pakan
 // route untuk tampil data
 Route::get("/view",[DataPakan::class,'viewData']);
+// route untuk pencarian
+Route::get('/search/{keyword}',[DataPakan::class,'searchData']);
 // route untuk tambah data
 Route::post("/save", [DataPakan::class,'saveData']);
 // route untuk delete data
 Route::delete("/delete/{kode}", [DataPakan::class,'deleteData']);
+// route untuk detail data
+Route::get('/detail/{npm}',[DataPakan::class,'detailData']);
 // route untuk edit data
 Route::put("/edit/{kode}", [DataPakan::class,'editData']);

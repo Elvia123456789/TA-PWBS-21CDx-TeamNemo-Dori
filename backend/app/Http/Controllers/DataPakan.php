@@ -36,6 +36,16 @@ class DataPakan extends Controller
         return response(["datapakan" => $data, "error" => $error, "messege" => $messege], http_response_code());
     }
 
+    // buat fungsi untuk pencarian data
+    function searchData($keyword)
+    {
+        // isi nilai variabel "data" dari fungsi "searchData" dari model "MDataPakan" sesuai dengan isi parameter "keyword"
+        $data = $this->model->searchData($keyword);
+
+        // kembalikan nilai variabel "result" ke dalam object "datapakan"
+        return response(["datapakan" => $data], http_response_code());
+    }
+
     // buat fungsi untuk tambah data
     function saveData(Request $req)
     {
@@ -83,10 +93,20 @@ class DataPakan extends Controller
         return response(["error" => $error, "messege" => $messege], http_response_code());
     }
 
+     // buat fungsi untuk detail data
+     function detailData($kode)
+     {
+         // isi nilai variabel "result" dari fungsi "detailData" dari model "MDataPakan" sesuai dengan isi parameter "id"
+         $data = $this->model->detailData($kode);
+ 
+         // kembalikan nilai variabel "result" ke dalam object "datapakan"
+         return response(["datapakan" => $data], http_response_code());
+     }
+
     // buat fungsi untuk edit data
     function editData($kode_lama, Request $req)
     {
-        // ambil data npm
+        // ambil data kode
         $kode = $req->kode;
 
         if (count($this->model->checkData($kode)) == 1) {

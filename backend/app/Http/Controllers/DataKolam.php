@@ -36,4 +36,14 @@ class DataKolam extends Controller
  
          return response(["kolam" => $data, "error" => $error, "message" => $message], http_response_code());
      }
+
+      // buat fungsi untuk pencarian data
+    function searchData($keyword)
+    {
+        // isi nilai variabel "data" dari fungsi "searchData" dari model "MDataKolam" sesuai dengan isi parameter "keyword"
+        $data = $this->model->searchData($keyword);
+
+        // kembalikan nilai variabel "result" ke dalam object "kolam"
+        return response(["kolam" => $data], http_response_code());
+    }
 }

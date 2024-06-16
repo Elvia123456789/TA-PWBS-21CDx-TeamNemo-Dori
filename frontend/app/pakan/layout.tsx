@@ -10,8 +10,7 @@ export default function PakanLayout() {
   return (
     <div>
       {/* panggil file "page" (folder "pakan") */}
-      <PakanPage
-       
+      <PakanPage   
       />
     </div>
   );

@@ -102,7 +102,7 @@ export default function PakanPage() {
                 <h1 className="text-4xl font-bold mb-4">Data Pakan</h1>
                 <div className="flex flex-col md:flex-row gap-4 mb-5 items-center">
                     <Link
-                        href="/add"
+                        href="/addpakan"
                         className="mr-1 bg-sky-300 px-5 py-3 w-40 rounded-full text-white active:bg-black active:text-sky-300 text-center"
                     >
                         Tambah Data
@@ -133,7 +133,7 @@ export default function PakanPage() {
 
                         {/* isi tabel */}
                         <tbody>
-                            {/* tampilkan data panen dari service getData dalam format object */}
+                            {/* tampilkan data pakan dari service getData dalam format object */}
 
                             {
                                 // jika data tidak ditemukan

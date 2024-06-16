@@ -53,9 +53,9 @@ class MKolam extends Model
     // buat fungsi untuk check data (berdasarkan jenis)
     function checkData($nama)
     {
-        // $query = $this->select("id")->where("npm", "=", $npm);
-        // $query = $this->select("id")
-        // ->whereRaw("TO_BASE64(npm) = '$npm'");
+        $query = $this->select("id")->where("jenis", "=", $jenis);
+        $query = $this->select("id")
+        ->whereRaw("TO_BASE64(jenis) = '$jenis'");
 
         return $query->get();
     }
@@ -63,17 +63,17 @@ class MKolam extends Model
      // buat fungsi untuk hapus data
      function deleteData($nama)
      {
-         // $this->where("npm","=",$npm)->delete();
-        //  $this->whereRaw("TO_BASE64(npm) = '$npm'")->delete();
+         $this->where("jenis","=",$jenis)->delete();
+         $this->whereRaw("TO_BASE64(jenis) = '$jenis'")->delete();
      }
 
     //  // buat fungsi untuk detail data
-    // function detailData($jenis)
-    // {
-    //     $query = $this->select("id AS id_kolam", "nama AS nama_kolam", "jenis AS jenis_kolam", "ukuran AS ukuran_kolam")->from($this->table)->whereRaw("TO_BASE64(npm) = '$npm'");
+    function detailData($jenis)
+    {
+        $query = $this->select("id AS id_kolam", "nama AS nama_kolam", "jenis AS jenis_kolam", "ukuran AS ukuran_kolam")->from($this->table)->whereRaw("TO_BASE64(jenis) = '$jenis'");
 
-    //     return $query->get();
-    // }
+        return $query->get();
+    }
 
     // buat fungsi untuk cek edit data
     function checkEditData($jenis_lama, $jenis)

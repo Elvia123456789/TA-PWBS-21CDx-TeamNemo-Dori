@@ -11,20 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('m_kolams', function (Blueprint $table) {
+        Schema::create('login', function (Blueprint $table) {
             // $table->id();
 
             // buat field id
-            $table->integer('id')->autoIncrement();
-            // // buat field nama kolam
-            $table->char('nama', 100);
-            // // buat field ukuran kolam
-            $table->string("jenis", 20);
-            // // buat field jenis kolam
-            $table->string("ukuran", 15);
-        
-
+            $table->id();
             
+            // buat field email
+            $table->string("email", 15);
+            
+           // buat field password
+           $table->string('password', 50);
 
             $table->timestamps();
         });
@@ -35,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('login');
     }
 };

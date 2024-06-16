@@ -11,16 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('login', function (Blueprint $table) {
-            
-             // buat field id
-             $table->integer('id')->autoIncrement();
-             
-            // buat field email
-             $table->string("email", 15);
-
-            // buat field password
-            $table->string('password', 50);
+        Schema::create('logout', function (Blueprint $table) {
+            $table->id();
             $table->timestamps();
         });
     }
@@ -30,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('login');
+        Schema::dropIfExists('logout');
     }
 };

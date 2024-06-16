@@ -103,6 +103,32 @@ class DataKolam extends Controller
         return response(["kolam" => $data], http_response_code());
     }
 
+     // buat fungsi untuk edit data
+     function editData($jenis_lama, Request $req)
+     {
+         // ambil data jenis
+         $npm = $req->npm;
+ 
+         // cek apakah data kolam (jenis) tersedia/tidak pada model checkEditData
+         // jika data tersedia
+         if (count($this->model->checkEditData($jenis_lama, $jenis)) == 0) {
+             $nama = $req->nama;
+             $ukuran = $req->ukuran;
+        
+ 
+             // panggil model "editData"
+             $this->model->editData($jenis, $nama, $ukuran, $jenis_lama);
+ 
+             $error = 0;
+             $message = "Data Berhasil Diubah";
+         }
+
+         return response(["error" => $error, "message" => $message], http_response_code());
+
+        }
+
+
+
 
 
 

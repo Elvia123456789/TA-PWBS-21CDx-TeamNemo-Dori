@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class MKolam extends Model
+class MDataKolam extends Model
 {
      // buat variabel untuk inisialisasi tabel
      protected $table = "tb_kolam";
@@ -35,7 +35,7 @@ class MKolam extends Model
     // buat fungsi untuk cek simpan data
     function checkSaveData($jenis)
     {
-        $query = $this->select("jenis")->from($this->table)->where("npm", "=", $npm);
+        $query = $this->select("jenis")->from($this->table)->where("jenis", "=", $jenis);
 
         return $query->get();
     }

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\MKolam;
+use App\Models\MDataKolam;
 use Illuminate\Http\Request;
 
-class Kolam extends Controller
+class DataKolam extends Controller
 {
     // buat inisialisasi untuk pengambilan model
     protected $model;
@@ -14,13 +14,13 @@ class Kolam extends Controller
     function __construct()
     {
         // isi nilai variabel "$model" 
-        $this->model = new MKolam();
+        $this->model = new MDataKolam();
     }
 
      // buat fungsi untuk tambah data
      function viewData()
      {
-         // jika data mahasiswa tidak ada
+         // jika data kolam tidak ada
          if (count($this->model->viewData()) == 0) {
              $data = [];
              $error = 1;
@@ -28,7 +28,7 @@ class Kolam extends Controller
          }
          // jika data kolam ada / tersedia
          else {
-             // ambil method "viewData" dari model "MKolam"
+             // ambil method "viewData" dari model "MDataKolam"
              $data = $this->model->viewData();
              $error = 0;
              $message = "";
@@ -36,5 +36,4 @@ class Kolam extends Controller
  
          return response(["kolam" => $data, "error" => $error, "message" => $message], http_response_code());
      }
-
 }

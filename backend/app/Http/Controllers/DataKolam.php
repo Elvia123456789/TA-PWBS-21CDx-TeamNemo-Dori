@@ -46,4 +46,54 @@ class DataKolam extends Controller
         // kembalikan nilai variabel "result" ke dalam object "kolam"
         return response(["kolam" => $data], http_response_code());
     }
+
+    // buat fungsi untuk tambah data
+    function saveData(Request $req)
+    {
+        // ambil data jenis kolam
+        $jenis = $req->jenis;
+
+        // jika jenis kolam sudah ada
+        if (count($this->model->checkSaveData($jenis)) != 0) {
+            $error = 1;
+            $message = "Data Gagal Disimpan (Jenis Kolam Sudah Terpakai !)";
+        }
+        // jika jenis kolam belum ada
+        else {
+            // ambil request
+            $nama = $req->nama;
+            $ukuran = $req->ukuran;
+
+            // proses simpan data
+            $this->model->saveData($jenis, $nama, $ukuran);
+
+            $error = 0;
+            $message = "Data Berhasil Disimpan";
+        }
+        return response(["error" => $error, "message" => $message], http_response_code());
+    }
+
+     // buat fungsi hapus data
+     function deleteData($npm)
+     {
+         // cek apakah data kolam(npm) tersedia/tidak pada model checkData
+         // jika data tersedia
+         if (count($this->model->checkData($jenis)) == 1) {
+             // panggil model "deleteData"
+             $this->model->deleteData($jenis);
+ 
+             $error = 0;
+             $message = "Data Berhasil Dihapus";
+         }
+         // jika data tidak tersedia
+         else {
+             $error = 1;
+             $message = "Data Gagal Dihapus !";
+         }
+         return response(["error" => $error, "message" => $message], http_response_code());
+     }
+
+
+
+
 }

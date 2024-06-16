@@ -43,6 +43,21 @@ Route::post("/save", [DataPakan::class,'saveData']);
 // route untuk delete data
 Route::delete("/delete/{kode}", [DataPakan::class,'deleteData']);
 // route untuk detail data
-Route::get('/detail/{npm}',[DataPakan::class,'detailData']);
+Route::get('/detail/{kode}',[DataPakan::class,'detailData']);
 // route untuk edit data
 Route::put("/edit/{kode}", [DataPakan::class,'editData']);
+
+// Route untuk Data Kolam
+// route untuk tampil data
+Route::get("/view",[DataKolam::class,'viewData']);
+// route untuk pencarian
+Route::get('/search/{keyword}',[DataKolam::class,'searchData']);
+// route untuk tambah data
+Route::post("/save", [DataKolam::class,'saveData']);
+// route untuk delete data
+Route::delete("/delete/{kode}", [DataKolam::class,'deleteData']);
+// route untuk detail data
+Route::get('/detail/{jenis}',[DataKolam::class,'detailData']);
+// route untuk edit data
+Route::put("/edit/{kode}", [DataKolam::class,'editData']);
+

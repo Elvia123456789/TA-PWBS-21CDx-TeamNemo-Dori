@@ -1,10 +1,18 @@
 "use client"
 import React from 'react'
 
-import Link from 'next/link';
+import Link from 'next/link'
+
+//import module/package "swr"
+//import useSWR from 'swr'
+
+//definisi "fetcher"
+//const fetcher = (url: string) =>
+    //fetch(url).then((response) => response.json())
 
 export default function KolamPage() {
-   
+    //definisi "swr"
+   // const { data } = useSWR('http://localhost:8000/api/view', fetcher)
     return (
         <div>
             {/* area menu */}
@@ -50,16 +58,20 @@ export default function KolamPage() {
                         <thead>
                             <tr>
                                 <th className="py-2 px-4 border-b-2 border-gray-200">Nama Kolam</th>
+                                <th className="py-2 px-4 border-b-2 border-gray-200">Jenis</th>
                                 <th className="py-2 px-4 border-b-2 border-gray-200">Ukuran</th>
-                                <th className="py-2 px-4 border-b-2 border-gray-200">Status</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td className="py-2 px-4 border-b border-gray-200"></td>
-                                <td className="py-2 px-4 border-b border-gray-200"></td>
-                                <td className="py-2 px-4 border-b border-gray-200"></td>
-                            </tr>
+                            {
+                               // (data && data.kolam.map((item: any) => (
+                                    <tr>
+                                        <td className="py-2 px-4 border-b border-gray-200">{/*{item.nama_kolam}*/}</td>
+                                        <td className="py-2 px-4 border-b border-gray-200">{/*{item.jenis_kolam}*/}</td>
+                                        <td className="py-2 px-4 border-b border-gray-200">{/*{item.ukuran_kolam}*/}</td>
+                                    </tr>
+                                //)))
+                            }
                         </tbody>
                     </table>
                 </div>

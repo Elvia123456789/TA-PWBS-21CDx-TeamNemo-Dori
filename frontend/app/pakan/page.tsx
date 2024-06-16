@@ -46,19 +46,24 @@ export default function PakanPage() {
                 <h1 className="text-4xl font-bold mb-4">Data Pakan</h1>
                 <div className="bg-white rounded-lg shadow p-6">
                     <table className="min-w-full bg-white">
-                        <thead>
+                    <thead>
                             <tr>
-                                <th className="py-2 px-4 border-b-2 border-gray-200">Nama Pakan</th>
-                                <th className="py-2 px-4 border-b-2 border-gray-200">Jumlah</th>
+                                <th className="py-2 px-4 border-b-2 border-gray-200">No</th>
+                                <th className="py-2 px-4 border-b-2 border-gray-200">Kode Pakan</th>
                                 <th className="py-2 px-4 border-b-2 border-gray-200">Jenis</th>
+                                <th className="py-2 px-4 border-b-2 border-gray-200">Jumlah</th>
                             </tr>
                         </thead>
                         <tbody>
+
+
                             <tr>
-                                <td className="py-2 px-4 border-b border-gray-200"></td>
-                                <td className="py-2 px-4 border-b border-gray-200"></td>
-                                <td className="py-2 px-4 border-b border-gray-200"></td>
+                                <td className="py-2 px-4 border-b border-gray-200">{/*{item.id_pakan}*/}</td>
+                                <td className="py-2 px-4 border-b border-gray-200">{/*{item.kode_pakan}*/}</td>
+                                <td className="py-2 px-4 border-b border-gray-200">{/*{item.jenis_pakan}*/}</td>
+                                <td className="py-2 px-4 border-b border-gray-200">{/*{item.jumlah_pakan}*/}</td>
                             </tr>
+
 
                         </tbody>
                     </table>

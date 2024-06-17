@@ -19,4 +19,19 @@ class MDataBibit extends Model
 
         return $query->get();
     }
+
+    // buat fungsi untuk pencarian data bibit
+    function searchData($keyword)
+    {
+        $query = $this->select("id AS id_bibit", "kode AS kode_bibit", "jenis AS jenis_bibit", "jumlah AS jumlah_bibit",  "ukuran AS ukuran_bibit")->from($this->table)
+        // pencarian kode dan jumlah harus sesuai dengan data
+        ->where('kode', $keyword)
+        ->orWhere('jumlah', $keyword)
+        ->orWhere('ukuran', $keyword)
+        // pencarian jenis sesuai dengan karakter yang ada pada data
+        ->orWhereRaw('jenis LIKE ?',["%$keyword%"])
+        ->orderBy("id");
+
+        return $query->get();
+    }
 }

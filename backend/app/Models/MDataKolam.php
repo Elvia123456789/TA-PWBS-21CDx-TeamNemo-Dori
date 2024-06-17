@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class MDataKolam extends Model
 {
      // buat variabel untuk inisialisasi tabel
-     protected $table = "tb_kolam";
+     protected $table = "tb_datakolam";
 
-     // buat fungsi untuk menampilkan data mahasiswa
+     // buat fungsi untuk menampilkan data kolam
      function viewData()
      {
          $query = $this->select("id AS id_kolam", "nama AS nama_kolam", "jenis AS jenis_kolam", "ukuran AS ukuran_kolam")->from($this->table)->orderBy("id");
@@ -18,7 +18,7 @@ class MDataKolam extends Model
          return $query->get();
         }
 
-         // buat fungsi untuk pencarian data mahasiswa
+         // buat fungsi untuk pencarian data kolam
     function searchData($keyword)
     {
         $query = $this->select("id AS id_kolam", "nama AS nama_kolam", "jenis AS jenis_kolam", "ukuran AS ukuran_kolam")->from($this->table)

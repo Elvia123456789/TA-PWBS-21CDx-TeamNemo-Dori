@@ -28,13 +28,13 @@ class DataKolam extends Controller
          }
          // jika data kolam ada / tersedia
          else {
-             // ambil method "viewData" dari model "MDataKolam"
+             // ambil method "viewData" dari model "Mkolam"
              $data = $this->model->viewData();
              $error = 0;
              $message = "";
          }
  
-         return response(["datakolam" => $data, "error" => $error, "message" => $message], http_response_code());
+         return response(["kolam" => $data, "error" => $error, "message" => $message], http_response_code());
      }
 
       // buat fungsi untuk pencarian data
@@ -96,7 +96,7 @@ class DataKolam extends Controller
        // buat fungsi untuk detail data
     function detailData($jenis)
     {
-        // isi nilai variabel "result" dari fungsi "detailData" dari model "MataKolam" sesuai dengan isi parameter "id"
+        // isi nilai variabel "result" dari fungsi "detailData" dari model "MDataKolam" sesuai dengan isi parameter "id"
         $data = $this->model->detailData($jenis);
 
         // kembalikan nilai variabel "result" ke dalam object "datakolam"

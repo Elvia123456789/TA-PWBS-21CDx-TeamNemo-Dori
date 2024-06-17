@@ -33,7 +33,7 @@ class DataPakan extends Controller
             $messege = "";
         }
 
-        return response(["datapakan" => $data, "error" => $error, "messege" => $messege], http_response_code());
+        return response(["pakan" => $data, "error" => $error, "messege" => $messege], http_response_code());
     }
 
     // buat fungsi untuk pencarian data
@@ -43,7 +43,7 @@ class DataPakan extends Controller
         $data = $this->model->searchData($keyword);
 
         // kembalikan nilai variabel "result" ke dalam object "datapakan"
-        return response(["datapakan" => $data], http_response_code());
+        return response(["pakan" => $data], http_response_code());
     }
 
     // buat fungsi untuk tambah data
@@ -100,7 +100,7 @@ class DataPakan extends Controller
          $data = $this->model->detailData($kode);
  
          // kembalikan nilai variabel "result" ke dalam object "datapakan"
-         return response(["datapakan" => $data], http_response_code());
+         return response(["pakan" => $data], http_response_code());
      }
 
     // buat fungsi untuk edit data

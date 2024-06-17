@@ -34,7 +34,7 @@ class Mahasiswa extends Controller
             $message = "";
         }
 
-        return response(["databibit" => $data, "error" => $error, "message" => $message], http_response_code());
+        return response(["bibit" => $data, "error" => $error, "message" => $message], http_response_code());
     }
 
     // buat fungsi untuk pencarian data

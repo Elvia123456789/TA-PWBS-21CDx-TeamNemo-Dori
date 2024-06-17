@@ -43,8 +43,8 @@ class Mahasiswa extends Controller
         // isi nilai variabel "data" dari fungsi "searchData" dari model "MDataBibit" sesuai dengan isi parameter "keyword"
         $data = $this->model->searchData($keyword);
 
-        // kembalikan nilai variabel "result" ke dalam object "databibit"
-        return response(["databibit" => $data], http_response_code());
+        // kembalikan nilai variabel "result" ke dalam object "bibit"
+        return response(["bibit" => $data], http_response_code());
     }
 
     // buat fungsi untuk tambah data
@@ -98,11 +98,11 @@ class Mahasiswa extends Controller
     // buat fungsi untuk detail data
     function detailData($kode)
     {
-        // isi nilai variabel "result" dari fungsi "detailData" dari model "Mdatabibit" sesuai dengan isi parameter "id"
+        // isi nilai variabel "result" dari fungsi "detailData" dari model "MDatabibit" sesuai dengan isi parameter "id"
         $data = $this->model->detailData($kode);
 
-        // kembalikan nilai variabel "result" ke dalam object "databibit"
-        return response(["databibit" => $data], http_response_code());
+        // kembalikan nilai variabel "result" ke dalam object "bibit"
+        return response(["bibit" => $data], http_response_code());
     }
 
     // buat fungsi untuk edit data

@@ -16,6 +16,8 @@ return new class extends Migration
 
               // buat field id
               $table->integer('id')->autoIncrement();
+              // // buat field kode kolam
+              $table->char('kode', 100);
               // // buat field nama kolam
               $table->char('nama', 100);
               // // buat field ukuran kolam

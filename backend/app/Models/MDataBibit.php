@@ -53,4 +53,29 @@ class MDataBibit extends Model
              "ukuran" => $ukuran,
          ]);
      }
+
+     // buat fungsi untuk check data (berdasarkan kode)
+    function checkData($kode)
+    {
+        // $query = $this->select("id")->where("kode", "=", $kode);
+        $query = $this->select("id")
+        ->whereRaw("TO_BASE64(kode) = '$kode'");
+
+        return $query->get();
+    }
+
+    // buat fungsi untuk hapus data
+    function deleteData($kode)
+    {
+        // $this->where("kode","=",$kode)->delete();
+        $this->whereRaw("TO_BASE64(kode) = '$kode'")->delete();
+    }
+
+    // buat fungsi untuk detail data
+    function detailData($kode)
+    {
+        $query = $this->select("id AS id_bibit", "kode AS kode_bibit", "jenis AS jenis_bibit", "jumlah AS jumlah_bibit",  "ukuran AS ukuran_bibit")->from($this->table)->whereRaw("TO_BASE64(kode) = '$kode'");
+
+        return $query->get();
+    }
 }

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class MDataKolam extends Model
 {
      // buat variabel untuk inisialisasi tabel
-     protected $table = "tb_datakolam";
+     protected $table = "kolam";
 
      // buat fungsi untuk menampilkan data kolam
      function viewData()

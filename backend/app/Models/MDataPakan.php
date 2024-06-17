@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class MDataPakan extends Model
 {
     // buat fungsi untuk menampilkan data pakan
-    protected $table = "tb_datapakan";
+    protected $table = "pakan";
 
     // buat fungsi untuk menampilkan data pakan
     function viewData()

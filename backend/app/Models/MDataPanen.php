@@ -5,31 +5,31 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class MDataBibit extends Model
+class MDatapanen extends Model
 {
-       // buat fungsi untuk menampilkan data bibit
-    protected $table = "bibit";
+       // buat fungsi untuk menampilkan data panen
+    protected $table = "panen";
 
-    // buat fungsi untuk menampilkan data bibit
+    // buat fungsi untuk menampilkan data panen
     function viewData()
     {
-        $query = $this->select("id AS id_bibit", "kode AS kode_bibit", "jenis AS jenis_bibit", "jumlah AS jumlah_bibit",  "ukuran AS ukuran_bibit")->from($this->table)->orderBy("id");
+        $query = $this->select("id AS id_panen", "kode AS kode_panen", "jenis AS jenis_panen", "jumlah AS jumlah_panen",  "tanggal AS tanggal_panen")->from($this->table)->orderBy("id");
 
         // $query = $this->from($this->table)->where("id","0")->orderBy("id");
 
         return $query->get();
     }
 
-    // buat fungsi untuk pencarian data bibit
+    // buat fungsi untuk pencarian data panen
     function searchData($keyword)
     {
-        $query = $this->select("id AS id_bibit", "kode AS kode_bibit", "jenis AS jenis_bibit", "jumlah AS jumlah_bibit",  "ukuran AS ukuran_bibit")->from($this->table)
-        // pencarian kode dan jumlah harus sesuai dengan data
-        ->where('kode', $keyword)
+        $query = $this->select("id AS id_panen", "kode AS kode_panen", "jenis AS jenis_panen", "jumlah AS tanggal_panen",  "tanggal AS tanggal_panen")->from($this->table)
+        // pencarian kode dan tanggal harus sesuai dengan data
+        ->where('jenis', $keyword)
         ->orWhere('jumlah', $keyword)
-        ->orWhere('ukuran', $keyword)
-        // pencarian jenis sesuai dengan karakter yang ada pada data
-        ->orWhereRaw('jenis LIKE ?',["%$keyword%"])
+        ->orWhere('tanggal', $keyword)
+        // pencarian jumlah sesuai dengan karakter yang ada pada data
+        ->orWhereRaw('kode LIKE ?',["%$keyword%"])
         ->orderBy("id");
 
         return $query->get();
@@ -44,13 +44,13 @@ class MDataBibit extends Model
      }
  
      // buat fungsi untuk simpan data
-     function saveData($kode, $jenis, $jumlah, $ukuran)
+     function saveData($kode, $jenis, $jumlah, $tanggal)
      {
          $this->insert([
              "kode" => $kode,
-             "jenis" => $jenis,
+             "jenis" => $jumlah,
              "jumlah" => $jumlah,
-             "ukuran" => $ukuran,
+             "tanggal" => $tanggal,
          ]);
      }
 
@@ -74,7 +74,7 @@ class MDataBibit extends Model
     // buat fungsi untuk detail data
     function detailData($kode)
     {
-        $query = $this->select("id AS id_bibit", "kode AS kode_bibit", "jenis AS jenis_bibit", "jumlah AS jumlah_bibit",  "ukuran AS ukuran_bibit")->from($this->table)->whereRaw("TO_BASE64(kode) = '$kode'");
+        $query = $this->select("id AS id_panen", "kode AS kode_panen", "jenis AS jenis_panen", "jumlah AS jumlah_panen",  "tanggal AS tanggal_panen")->from($this->table)->whereRaw("TO_BASE64(kode) = '$kode'");
 
         return $query->get();
     }
@@ -89,13 +89,13 @@ class MDataBibit extends Model
      }
  
      // buat fungsi untuk edit data
-     function editData($kode, $nama, $telepon, $jurusan, $kode_lama)
+     function editData($kode, $jenis, $jumlah, $tanggal, $kode_lama)
      {
          $this->whereRaw("TO_BASE64(kode) = '$kode_lama'")->update([
              "kode" => $kode,
-             "jenis" => $jenis,
+             "jenis" => $jumlah,
              "jumlah" => $jumlah,
-             "ukuran" => $ukuran,
+             "tanggal" => $tanggal,
          ]);
      }   
 }

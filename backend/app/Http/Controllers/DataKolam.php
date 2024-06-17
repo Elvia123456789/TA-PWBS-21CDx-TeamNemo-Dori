@@ -127,9 +127,4 @@ class DataKolam extends Controller
 
         }
 
-
-
-
-
-
 }

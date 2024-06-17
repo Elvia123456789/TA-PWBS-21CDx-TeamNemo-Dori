@@ -78,4 +78,24 @@ class MDataBibit extends Model
 
         return $query->get();
     }
+
+     // buat fungsi untuk cek edit data
+     function checkEditData($kode_lama, $kode)
+     {
+         $query = $this->select("id")->where("kode","=",$kode)->whereRaw("TO_BASE64(kode) != '$kode_lama'")->get();
+ 
+         return $query;
+ 
+     }
+ 
+     // buat fungsi untuk edit data
+     function editData($kode, $nama, $telepon, $jurusan, $kode_lama)
+     {
+         $this->whereRaw("TO_BASE64(kode) = '$kode_lama'")->update([
+             "kode" => $kode,
+             "jenis" => $jenis,
+             "jumlah" => $jumlah,
+             "ukuran" => $ukuran,
+         ]);
+     }   
 }

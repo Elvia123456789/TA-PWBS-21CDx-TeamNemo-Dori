@@ -57,7 +57,35 @@ Route::post("/save", [DataKolam::class,'saveData']);
 // route untuk delete data
 Route::delete("/delete/{kode}", [DataKolam::class,'deleteData']);
 // route untuk detail data
-Route::get('/detail/{jenis}',[DataKolam::class,'detailData']);
+Route::get('/detail/{kode}',[DataKolam::class,'detailData']);
 // route untuk edit data
 Route::put("/edit/{kode}", [DataKolam::class,'editData']);
+
+// Route untuk Data Bibit
+// route untuk tampil data
+Route::get("/view",[DataBibit::class,'viewData']);
+// route untuk pencarian
+Route::get('/search/{keyword}',[DataBibit::class,'searchData']);
+// route untuk tambah data
+Route::post("/save", [DataBibit::class,'saveData']);
+// route untuk delete data
+Route::delete("/delete/{kode}", [DataBibit::class,'deleteData']);
+// route untuk detail data
+Route::get('/detail/{kode}',[DataBibit::class,'detailData']);
+// route untuk edit data
+Route::put("/edit/{kode}", [DataBibit::class,'editData']);
+
+// Route untuk Data Panen
+// route untuk tampil data
+Route::get("/view",[DataPanen::class,'viewData']);
+// route untuk pencarian
+Route::get('/search/{keyword}',[DataPanen::class,'searchData']);
+// route untuk tambah data
+Route::post("/save", [DataPanen::class,'saveData']);
+// route untuk delete data
+Route::delete("/delete/{kode}", [DataPanen::class,'deleteData']);
+// route untuk detail data
+Route::get('/detail/{kode}',[DataPanen::class,'detailData']);
+// route untuk edit data
+Route::put("/edit/{kode}", [DataPanen::class,'editData']);
 

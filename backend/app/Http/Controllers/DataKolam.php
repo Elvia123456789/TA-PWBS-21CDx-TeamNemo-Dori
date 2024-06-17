@@ -34,7 +34,7 @@ class DataKolam extends Controller
              $message = "";
          }
  
-         return response(["kolam" => $data, "error" => $error, "message" => $message], http_response_code());
+         return response(["datakolam" => $data, "error" => $error, "message" => $message], http_response_code());
      }
 
       // buat fungsi untuk pencarian data
@@ -44,7 +44,7 @@ class DataKolam extends Controller
         $data = $this->model->searchData($keyword);
 
         // kembalikan nilai variabel "result" ke dalam object "kolam"
-        return response(["kolam" => $data], http_response_code());
+        return response(["datakolam" => $data], http_response_code());
     }
 
     // buat fungsi untuk tambah data
@@ -74,9 +74,9 @@ class DataKolam extends Controller
     }
 
      // buat fungsi hapus data
-     function deleteData($npm)
+     function deleteData($kode)
      {
-         // cek apakah data kolam(npm) tersedia/tidak pada model checkData
+         // cek apakah data kolam(kode) tersedia/tidak pada model checkData
          // jika data tersedia
          if (count($this->model->checkData($jenis)) == 1) {
              // panggil model "deleteData"
@@ -99,15 +99,15 @@ class DataKolam extends Controller
         // isi nilai variabel "result" dari fungsi "detailData" dari model "MataKolam" sesuai dengan isi parameter "id"
         $data = $this->model->detailData($jenis);
 
-        // kembalikan nilai variabel "result" ke dalam object "kolam"
-        return response(["kolam" => $data], http_response_code());
+        // kembalikan nilai variabel "result" ke dalam object "datakolam"
+        return response(["datakolam" => $data], http_response_code());
     }
 
      // buat fungsi untuk edit data
      function editData($jenis_lama, Request $req)
      {
          // ambil data jenis
-         $npm = $req->npm;
+         $kode = $req->kode;
  
          // cek apakah data kolam (jenis) tersedia/tidak pada model checkEditData
          // jika data tersedia

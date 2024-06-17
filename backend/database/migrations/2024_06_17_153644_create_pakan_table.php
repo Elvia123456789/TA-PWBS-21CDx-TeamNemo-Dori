@@ -11,17 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tb_datapakan', function (blueprint $table) {
+        Schema::create('pakan', function (Blueprint $table) {
             // $table->id();
 
-            // buat field id
-            $table->integer('id')->autoIncrement();
-            // buat field kode pakan
-            $table->varchar("kode", 8);
-            // buat field nama pakan
-            $table->string("jenis", 100);
-            // buat field jumlah
-            $table->integer('jumlah', 15);
+             // buat field id
+             $table->integer('id')->autoIncrement();
+             // buat field kode pakan
+             $table->varchar("kode", 8);
+             // buat field nama pakan
+             $table->string("jenis", 100);
+             // buat field jumlah
+             $table->integer('jumlah', 15);
             $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tb_datakolam');
+        Schema::dropIfExists('pakan');
     }
 };

@@ -11,19 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tb_panen', function (Blueprint $table) {
+        Schema::create('bibit', function (Blueprint $table) {
             // $table->id();
 
              // buat field id
-            $table->integer('id')->autoIncrement();
-             // buat field kode panen
-            $table->varchar("kode", 8);
+             $table->integer('id')->autoIncrement();
+             // buat field kode bibit
+             $table->varchar("kode", 8);
              // buat field jenis ikan
-            $table->string("jenis", 100);
-             // buat field jumlah panen
-            $table->integer('jumlah', 15);
-             // buat field tanggal panen
-            $table->integer('tanggal', 20);
+             $table->string("jenis", 100);
+             // buat field jumlah
+             $table->integer('jumlah', 15);
+             // buat field ukuran
+             $table->integer('ukuran', 20);
             $table->timestamps();
         });
     }
@@ -33,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('panen');
+        Schema::dropIfExists('bibit');
     }
 };

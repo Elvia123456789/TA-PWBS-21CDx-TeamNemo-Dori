@@ -34,4 +34,23 @@ class MDataBibit extends Model
 
         return $query->get();
     }
+
+     // buat fungsi untuk cek simpan data
+     function checkSaveData($kode)
+     {
+         $query = $this->select("kode")->from($this->table)->where("kode", "=", $kode);
+ 
+         return $query->get();
+     }
+ 
+     // buat fungsi untuk simpan data
+     function saveData($kode, $jenis, $jumlah, $ukuran)
+     {
+         $this->insert([
+             "kode" => $kode,
+             "jenis" => $jenis,
+             "jumlah" => $jumlah,
+             "ukuran" => $ukuran,
+         ]);
+     }
 }
